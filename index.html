@@ -10,6 +10,9 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/navbar-fixed/">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+
 
     <!-- Bootstrap core CSS -->
 <link href="./css/bootstrap.min.css" rel="stylesheet">
@@ -27,6 +30,9 @@
         .bd-placeholder-img-lg {
           font-size: 3.5rem;
         }
+      }
+      .errormessage {
+        display: none;
       }
     </style>
 
@@ -65,6 +71,11 @@
 <main class="container">
   <div class="bg-light p-5 rounded">
     <h1>IFR Alternate</h1>
+    <p>Every IFR flight within Canada must include an alternate airport <i>regardless</i> of the weather at the destination airport. Additionally, the alternate airport must also meet minimum weather criteria (ceilings and visibilities). (<a href="https://laws-lois.justice.gc.ca/eng/regulations/sor-96-433/FullText.html#h-994409">CAR 602.122 & 602.123</a>)</p>
+    <p>This tool will aid you in choosing a suitable IFR alternate which may be used in your flight plan.</p>
+    <h3>Step 1: Weather Minima</h3>
+    <p>The weather minimums for your alternate airport become less strict the more precise your intended approach. Transport Canada also allows you to use a "sliding scale" (an increase in ceilings and visibilities) if the alternate airport falls into the "standard alternate minima". </p>
+    <p>General aviation pilots are most likely to choose the 1 Precision Approach (PA) or Non-Precision Approach (NPA) type for their alternate. You may be denied service as a GA aircraft at an international airport with 2 or more precision approaches.</p>
     <div class="row">
       <div class="col">
         <h5>Facilities Available</h5>
@@ -101,7 +112,7 @@
         <div class="form-check">
           <input class="form-check-input" type="radio" name="approachtype" id="approachtype4" value="VFR">
           <label class="form-check-label" for="approachtype4">
-            VFR Only
+            None
           </label>
         </div>
       </div> 
@@ -117,7 +128,12 @@
     </form>
     <div class="row">
       <div class="col"></div>
-      <div class="col" id="errormessage">Error message</div>
+      <div class="col-9 errormessage" id="errormessage"><div class="alert d-flex align-items-center align-top" role="alert">
+        <i id="erroricon" class="bi me-2"></i>
+        <div id="alerttext">
+          An example success alert with an icon
+        </div>
+      </div></div>
     </div>
   </div>
 </main>
