@@ -76,15 +76,22 @@
     <h3>Step 1: Weather Minima</h3>
     <p>The weather minimums for your alternate airport become less strict the more precise your intended approach. Transport Canada also allows you to use a "sliding scale" (an increase in ceilings and visibilities) if the alternate airport falls into the "standard alternate minima". </p>
     <p>General aviation pilots are most likely to choose the 1 Precision Approach (PA) or Non-Precision Approach (NPA) type for their alternate. You may be denied service as a GA aircraft at an international airport with 2 or more precision approaches.</p>
+    <p>Start by finding an airport and a suitable approach and view the plate. </p>
     <div class="row">
       <div class="col">
-        <h5>Facilities Available</h5>
+        <h6>Facilities Available</h6>
       </div>
-      <div class="col">
-        <h5>Approach Height (AGL)</h5>
+      <div class="col-2">
+        <h6>Approach Height</h6>
       </div>
-      <div class="col">
-        <h5>Approach Visibility (SM)</h5>
+      <div class="col-2">
+        <h6>Decision Height</h6>
+      </div>
+      <div class="col-2">
+        <h6>Approach Visibility</h6>
+      </div>
+      <div class="col-1">
+        <h6>Airport</h6>
       </div>
       <div class="col">
       </div>
@@ -116,11 +123,17 @@
           </label>
         </div>
       </div> 
-      <div class="col">
+      <div class="col-2">
         <input type="number" class="form-control" placeholder="HAT/HAA (AGL)" id="hat" required>
       </div>
-      <div class="col">
+      <div class="col-2">
+        <input type="number" class="form-control" placeholder="DH/DA" id="dh" required>
+      </div>
+      <div class="col-2">
         <input type="number" step="0.25" class="form-control" placeholder="Visibility" id="vis" required>
+      </div>
+      <div class="col-1">
+        <input type="text" class="form-control" placeholder="Airport" id="airport" size="4" required>
       </div>
       <div class="col">
         <button type="submit" class="btn btn-primary" id="submit">Calculate</button>
@@ -133,7 +146,28 @@
         <div id="alerttext">
           An example success alert with an icon
         </div>
-      </div></div>
+      </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col"></div>
+      <div class="col-9" id="taf">
+        <div id="tafValid"></div>
+        <table class="table table-sm" id="taftable">
+          <thead>
+            <tr>
+              <th scope="col">Between</th>
+              <th scope="col">Winds</th>
+              <th scope="col">Lowest Ceiling/Weather</th>
+              <th scope="col">Visibility</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </main>
